@@ -64,4 +64,7 @@ vim.keymap.set('n', 'dd', '"_dd', { noremap = true, silent = true })
 vim.keymap.set('v', 'd', '"_d', { noremap = true, silent = true })
 vim.keymap.set('v', 'x', '"_x', { noremap = true, silent = true })
 
+-- bind redo to U
+vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
