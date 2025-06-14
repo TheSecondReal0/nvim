@@ -67,4 +67,20 @@ vim.keymap.set('v', 'x', '"_x', { noremap = true, silent = true })
 -- bind redo to U
 vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
 
+-- compiler maps
+-- Open compiler
+vim.api.nvim_set_keymap('n', '<F6>', '<cmd>CompilerOpen<cr>', { noremap = true, silent = true })
+
+-- Redo last selected option
+vim.api.nvim_set_keymap(
+  'n',
+  '<S-F6>',
+  '<cmd>CompilerStop<cr>' -- (Optional, to dispose all tasks before redo)
+    .. '<cmd>CompilerRedo<cr>',
+  { noremap = true, silent = true }
+)
+
+-- Toggle compiler results
+vim.api.nvim_set_keymap('n', '<S-F7>', '<cmd>CompilerToggleResults<cr>', { noremap = true, silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
