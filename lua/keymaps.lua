@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- toggle neo-tree with \, show with |
-vim.keymap.set('n', '\\', ':Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle neo-tree reveal' })
+-- vim.keymap.set('n', '\\', ':Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle neo-tree reveal' })
 vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree' })
 
 -- don't yank on deletes
@@ -82,5 +82,64 @@ vim.api.nvim_set_keymap(
 
 -- Toggle compiler results
 vim.api.nvim_set_keymap('n', '<S-F7>', '<cmd>CompilerToggleResults<cr>', { noremap = true, silent = true })
+
+-- BarBar keymaps
+local map = vim.api.nvim_set_keymap
+local barbar_opts = { noremap = true, silent = true }
+
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', barbar_opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', barbar_opts)
+
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', barbar_opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', barbar_opts)
+
+-- Goto buffer in position...
+map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', barbar_opts)
+map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', barbar_opts)
+map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', barbar_opts)
+map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', barbar_opts)
+map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', barbar_opts)
+map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', barbar_opts)
+map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', barbar_opts)
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', barbar_opts)
+map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', barbar_opts)
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', barbar_opts)
+
+-- Pin/unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', barbar_opts)
+
+-- Goto pinned/unpinned buffer
+--                 :BufferGotoPinned
+--                 :BufferGotoUnpinned
+
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', barbar_opts)
+
+-- Wipeout buffer
+--                 :BufferWipeout
+
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+
+-- Magic buffer-picking mode
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', barbar_opts)
+map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', barbar_opts)
+
+-- Sort automatically by...
+map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', barbar_opts)
+map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', barbar_opts)
+map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', barbar_opts)
+map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', barbar_opts)
+map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', barbar_opts)
+
+-- Other:
+-- :BarbarEnable - enables barbar (enabled by default)
+-- :BarbarDisable - very bad command, should never be used
 
 -- vim: ts=2 sts=2 sw=2 et
