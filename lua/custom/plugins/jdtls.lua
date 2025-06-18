@@ -122,16 +122,16 @@ return {
       ------------------------------------------------------------------------
       -- Nice Which-Key mappings (optional)
       ------------------------------------------------------------------------
-      local wk_ok, wk = pcall(require, 'which-key')
-      if wk_ok then
-        wk.register({
-          ['<leader>cx'] = { name = '+jdtls-extract' },
-          ['<leader>cxv'] = { "<cmd>lua require('jdtls').extract_variable_all()<cr>", 'Extract Variable' },
-          ['<leader>cxc'] = { "<cmd>lua require('jdtls').extract_constant()<cr>", 'Extract Constant' },
-          ['<leader>cgs'] = { "<cmd>lua require('jdtls').super_implementation()<cr>", 'Goto Super' },
-          ['<leader>co'] = { "<cmd>lua require('jdtls').organize_imports()<cr>", 'Organize Imports' },
-        }, { mode = 'n', buffer = vim.api.nvim_get_current_buf() })
-      end
+      -- local wk_ok, wk = pcall(require, 'which-key')
+      -- if wk_ok then
+      --   wk.register({
+      --     { '<leader>cgs', "<cmd>lua require('jdtls').super_implementation()<cr>", buffer = args.buf, desc = 'Goto Super' },
+      --     { '<leader>co', "<cmd>lua require('jdtls').organize_imports()<cr>", buffer = args.buf, desc = 'Organize Imports' },
+      --     { '<leader>cx', buffer = args.buf, group = 'jdtls-extract' },
+      --     { '<leader>cxc', "<cmd>lua require('jdtls').extract_constant()<cr>", buffer = args.buf, desc = 'Extract Constant' },
+      --     { '<leader>cxv', "<cmd>lua require('jdtls').extract_variable_all()<cr>", buffer = args.buf, desc = 'Extract Variable' },
+      --   }, { mode = 'n' })
+      -- end
     end,
   },
 }
