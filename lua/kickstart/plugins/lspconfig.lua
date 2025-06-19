@@ -226,6 +226,7 @@ return {
         -- cmd = vim.lsp.rpc.connect('127.0.0.1', '6005'),
         -- },
         -- java_language_server = {},
+        jdtls = {},
 
         lua_ls = {
           -- cmd = { ... },
