@@ -55,15 +55,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.keymap.set('n', '\\', ':Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle neo-tree reveal' })
 vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree' })
 
--- don't yank on deletes
--- Map 'd' to delete to the black hole register "_d
-vim.keymap.set('n', 'd', '"_d', { noremap = true, silent = true })
-vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true })
-vim.keymap.set('n', 'dd', '"_dd', { noremap = true, silent = true })
--- don't yank from visual mode
-vim.keymap.set('v', 'd', '"_d', { noremap = true, silent = true })
-vim.keymap.set('v', 'x', '"_x', { noremap = true, silent = true })
-
 -- bind redo to U
 vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
 
