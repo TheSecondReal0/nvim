@@ -211,7 +211,7 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -219,7 +219,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
         csharp_ls = {},
         -- gdscript = {
@@ -228,6 +228,33 @@ return {
         -- },
         -- java_language_server = {},
         -- jdtls = {},
+
+        -- getting yaml working with helm was too much trouble than it's worth, not to hard to just do by hand
+        -- yamlls = {
+        --   settings = {
+        --     redhat = { telemetry = { enabled = false } },
+        --     yaml = {
+        --       schemas = {
+        --         ['https://json.schemastore.org/chart.json'] = '*/helm/templates/*',
+        --         -- ['https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.22.0-standalone-strict/all.json'] = '/*.k8s.yaml',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/configmap.json'] = '*onfigma*.{yml,yaml}',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/deployment.json'] = '*eployment*.{yml,yaml}',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/service.json'] = '*ervic*.{yml,yaml}',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/ingress.json'] = '*ngres*.{yml,yaml}',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/secret.json'] = '*ecre*.{yml,yaml}',
+        --         -- ['https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master/statefulset.json'] = '*stateful*.{yml,yaml}',
+        --         ['https://json.schemastore.org/github-workflow.json'] = '/.github/workflows/*',
+        --       },
+        --     },
+        --     on_attach = function(client, bufnr)
+        --       if vim.bo[bufnr].buftype ~= '' or vim.bo[bufnr].filetype == 'helm' then
+        --         vim.diagnostic.enable(false)
+        --       end
+        --     end,
+        --   },
+        -- },
+
+        -- helm_ls = {},
 
         lua_ls = {
           -- cmd = { ... },
