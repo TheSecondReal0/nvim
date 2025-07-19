@@ -244,3 +244,8 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
 
+# java weirdness
+For some reason, java stopped working on or around 15/7/25 despite no change in config files. Going back to an earlier commit does not fix. The problem is that the java language server just doesn't startup when looking at java files.
+
+A fix I have found is uncommenting the `jdtls` language server then opening nvim in a java project. This should trigger neovim to install all required plugins (not sure why the nvim-java dependency doesn't do that...). This will create some errors, but ignore them for now. Wait for setup to be done then close neovim and comment out the jdtls language server again. When you next startup neovim it should work!
+
