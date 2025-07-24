@@ -1,6 +1,6 @@
 return {
   'm4xshen/hardtime.nvim',
   opts = {
-    -- add any options here
+    disable_mouse = false,
   },
 }
