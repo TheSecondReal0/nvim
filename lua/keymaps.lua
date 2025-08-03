@@ -54,6 +54,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- toggle neo-tree with \, show with |
 -- vim.keymap.set('n', '\\', ':Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle neo-tree reveal' })
 vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree' })
+vim.keymap.set('n', '\\', ':Fyler kind=split:leftmost<cr>', { desc = 'Reveal Fyler' })
 
 -- bind redo to U
 vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
