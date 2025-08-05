@@ -28,7 +28,7 @@ vim.diagnostic.config {
   jump = { float = true },
 }
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -59,6 +59,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+vim.keymap.set('n', '<leader>q', ':q<cr>', { desc = '[Q]uit buffer', silent = true })
+vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = '[W]rite buffer', silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -73,13 +76,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- toggle neo-tree with \, show with |
 -- vim.keymap.set('n', '\\', ':Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle neo-tree reveal' })
-vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree' })
-vim.keymap.set('n', '\\', ':Fyler kind=split:leftmost<cr>', { desc = 'Reveal Fyler' })
+vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree', silent = true })
+-- vim.keymap.set('n', '\\', ':Fyler kind=split:leftmost<cr>', { desc = 'Reveal Fyler', silent = true })
 
 -- bind redo to U
 vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
 -- remove tab jumping keybind
 vim.keymap.set('i', '<Tab>', '<C-t>', { noremap = true, silent = true })
+vim.keymap.set('n', ' ', '<Nop>', { noremap = true, silent = true })
 
 -- compiler maps
 -- Open compiler
