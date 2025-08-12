@@ -44,6 +44,7 @@ return {
           handler = function(arg)
             vim.cmd [[
           setlocal relativenumber
+          setlocal numberwidth=3 " remove unused char at far left
         ]]
           end,
         },
