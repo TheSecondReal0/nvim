@@ -20,11 +20,12 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      group_empty_dirs = true, -- combines multiple layers of one folder dirs into one entry
       filtered_items = {
         visible = true,
         show_hidden_count = true,
         hide_dotfiles = false,
-        hide_gitignored = true,
+        hide_gitignored = false,
         hide_by_name = {
           -- add extension names you want to explicitly exclude
           -- '.git',
@@ -35,4 +36,40 @@ return {
       },
     },
   },
+  config = function()
+    require('neo-tree').setup {
+      event_handlers = {
+        {
+          event = 'neo_tree_buffer_enter',
+          handler = function(arg)
+            vim.cmd [[
+          setlocal relativenumber
+        ]]
+          end,
+        },
+      },
+      filesystem = {
+        window = {
+          mappings = {
+            ['\\'] = 'close_window',
+          },
+        },
+        group_empty_dirs = true, -- combines multiple layers of one folder dirs into one entry
+        scan_mode = 'deep', -- automatically expand if only one child folder
+        filtered_items = {
+          visible = true,
+          show_hidden_count = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_by_name = {
+            -- add extension names you want to explicitly exclude
+            -- '.git',
+            -- '.DS_Store',
+            -- 'thumbs.db',
+          },
+          never_show = {},
+        },
+      },
+    }
+  end,
 }
