@@ -63,7 +63,6 @@ vim.keymap.set('n', '|', ':Neotree reveal<cr>', { desc = 'Reveal neo-tree', sile
 vim.keymap.set('n', 'U', '<C-R>', { noremap = true, silent = true })
 -- remove tab jumping keybind
 vim.keymap.set('n', '<Tab>', '<Nop>', { noremap = true, silent = true })
-vim.keymap.set('n', ' ', '<Nop>', { noremap = true, silent = true })
 
 -- compiler maps
 -- Open compiler
