@@ -92,6 +92,9 @@ vim.keymap.set('n', '<Space>', '<Nop>', { silent = true, remap = false })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Try to avoid weirdness with multiple keybinds on path to opening search
+vim.keymap.set('n', '<leader>s', '<Nop>', { silent = true, remap = false })
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
