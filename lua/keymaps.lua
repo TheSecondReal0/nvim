@@ -1,6 +1,10 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Alternative keybinds to switch to normal mode from insert mode
+vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Escape to normal mode' })
+vim.keymap.set('i', '<C-[', '<Esc>', { desc = 'Escape to normal mode' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
