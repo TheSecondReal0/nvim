@@ -223,8 +223,8 @@ return {
         --
         csharp_ls = {},
         -- gdscript = {
-        -- name = 'godot',
-        -- cmd = vim.lsp.rpc.connect('127.0.0.1', '6005'),
+        --   name = 'godot',
+        --   cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
         -- },
         -- java_language_server = {},
         -- jdtls = {},
@@ -307,6 +307,8 @@ return {
         'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      require('lspconfig').gdscript.setup {}
     end,
   },
 }
