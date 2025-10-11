@@ -135,8 +135,8 @@ return {
         --
         csharp_ls = {},
         -- gdscript = {
-        -- name = 'godot',
-        -- cmd = vim.lsp.rpc.connect('127.0.0.1', '6005'),
+        --   name = 'godot',
+        --   cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
         -- },
         -- java_language_server = {},
         -- jdtls = {},
