@@ -63,11 +63,12 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          -- mappings = {
+          --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          -- },
+          layout_strategy = 'horizontal',
+        },
         pickers = {
           find_files = {
             hidden = true,
@@ -141,6 +142,10 @@ return {
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
+
+      -- Slightly advanced example of overriding default behavior and theme
+      vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
+      vim.keymap.set('n', '<leader>sF', builtin.grep_string, { desc = '[?] Fuzzily search in project' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
