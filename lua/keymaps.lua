@@ -34,6 +34,18 @@ vim.diagnostic.config {
 
 vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Clipboard stuff
+vim.keymap.set('n', '<leader>y', '"+y', { desc = '[Y]ank to clipboard' })
+vim.keymap.set('x', '<leader>y', '"+y', { desc = '[Y]ank to clipboard' })
+vim.keymap.set('n', '<leader>Y', '"+Y', { desc = '[Y]ank rest of line to clipboard' })
+vim.keymap.set('x', '<leader>Y', '"+Y', { desc = '[Y]ank rest of line to clipboard' })
+vim.keymap.set('n', '<leader>x', '"+x', { desc = '[X] but to clipboard' })
+vim.keymap.set('x', '<leader>x', '"+x', { desc = '[X] but to clipboard' })
+vim.keymap.set('n', '<leader>p', '"+p', { desc = '[P]aste from clipboard' })
+vim.keymap.set('x', '<leader>p', '"+p', { desc = '[P]aste from clipboard' })
+vim.keymap.set('n', '<leader>P', '"+P', { desc = '[P]aste from clipboard behind cursor' })
+vim.keymap.set('x', '<leader>P', '"+P', { desc = '[P]aste from clipboard overwrite selection' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
