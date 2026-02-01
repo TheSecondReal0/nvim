@@ -123,17 +123,17 @@ return {
       --  See `:help lsp-config` for information about keys and how to configure
       local servers = {
         -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
+        gopls = {},
+        pyright = {},
         -- rust_analyzer = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
-        -- csharp_ls = {},
+        csharp_ls = {},
         -- gdscript = {
         -- name = 'godot',
         -- cmd = vim.lsp.rpc.connect('127.0.0.1', '6005'),
