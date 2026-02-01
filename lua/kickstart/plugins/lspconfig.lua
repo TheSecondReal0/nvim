@@ -202,6 +202,8 @@ return {
       vim.list_extend(ensure_installed, {
         'lua_ls', -- Lua Language server
         'stylua', -- Used to format Lua code
+        'csharp-language-server',
+        -- 'gdscript',
         -- You can add other tools here that you want Mason to install
       })
 
